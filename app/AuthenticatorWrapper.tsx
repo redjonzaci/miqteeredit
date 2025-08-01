@@ -7,5 +7,22 @@ export default function AuthenticatorWrapper({
 }: {
   children: React.ReactNode;
 }) {
-  return <Authenticator>{children}</Authenticator>;
+  return (
+    <Authenticator
+      formFields={{
+        signIn: {
+          username: {
+            dialCode: "+355",
+          },
+        },
+        signUp: {
+          phone_number: {
+            dialCode: "+355",
+          },
+        },
+      }}
+    >
+      {children}
+    </Authenticator>
+  );
 }
