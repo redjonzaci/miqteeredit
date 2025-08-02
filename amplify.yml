@@ -3,7 +3,7 @@ backend:
   phases:
     build:
       commands:
-        - npm i -g pnpm
+        - curl -fsSL https://get.pnpm.io/install.sh | sh -
         - pnpm install
         - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
 frontend:
